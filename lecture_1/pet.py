@@ -46,5 +46,6 @@ def complex_menu():
             else:
                 print(f'\nКоличество ответов: {otvet_number}\nПрошлые ответы: \n{str_otvetov}\n')
 
+
 #При запуске мы сразу начинаем выполнять ключевую функцию.
 complex_menu()
