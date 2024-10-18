@@ -24,7 +24,7 @@ def str_num_1(number):
         first_part = int(str(number)[0])
         second_part = int(str(number)[1])
         if second_part == 0:
-            return str(f'{complex_list[2][first_part - 2]}').title()
+            return str(complex_list[2][first_part - 2]).title()
         else:
             return str(f'{complex_list[2][first_part - 2].title()} {complex_list[0][second_part - 1]}')
 
@@ -39,6 +39,6 @@ def str_num_2(number):
         return str(complex_list[1][int(str(number)[1]) - 1]).title()
     elif 20 <= number <= 99:
         if int(str(number)[1]) == 0:
-            return str(f'{complex_list[2][int(str(number)[0]) - 2]}').title()
+            return str(complex_list[2][int(str(number)[0]) - 2]).title()
         else:
             return str(f'{complex_list[2][int(str(number)[0]) - 2].title()} {complex_list[0][int(str(number)[1]) - 1]}')
