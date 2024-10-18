@@ -1,5 +1,5 @@
 from time import sleep as sl
-from func2 import pirnt_number
+from func2 import str_num_1
 
 while True:
     number = input('Введите число от 1 до 99 или введите "N", '
@@ -11,4 +11,4 @@ while True:
         sl(1)
         quit()
     else:
-        print(f'\n{pirnt_number(number)}', end='\n\n')
+        print(f'\n{str_num_1(number)}', end='\n\n')
