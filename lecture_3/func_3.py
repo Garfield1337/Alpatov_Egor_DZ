@@ -1,5 +1,13 @@
+def pun (temp):
+    if ',' in temp:
+        return temp.replace(',', '.')
+    else:
+        return temp
+
+
 def check_temp(temp):
     while True:
+        temp = pun(temp)
         try:
             float(temp[:-1])
             if temp[-1] not in ('c', 'f'):
@@ -14,7 +22,7 @@ def temp_switch(temp):
     temp = check_temp(temp)
     if temp[-1] == 'f':
         f_formula = (float(temp[:-1])-32)/1.8
-        return str(round(f_formula, 2)).rstrip('0').rstrip('.') + 'C°'
+        return str(round(f_formula, 2)).rstrip('0').rstrip('.') + '°C'
     elif temp [-1] == 'c':
         c_formula = float(temp[:-1])*9/5+32
-        return str(round(c_formula, 2)).rstrip('0').rstrip('.') + 'F°'
+        return str(round(c_formula, 2)).rstrip('0').rstrip('.') + '°F'
