@@ -1,7 +1,7 @@
 import codecs
 import subprocess
-import os
-from flask import Flask, render_template, request, flash, redirect
+from flask import Flask, render_template, request
+
 
 app = Flask(__name__)
 
@@ -13,18 +13,13 @@ def main():
 
 @app.route('/extract', methods=["post"])
 def extract():
-    user_input = request.form['txt']
-    with codecs.open('./input.txt', 'w', 'utf-8') as inp:
-        inp.write(str(user_input))
-    command = ['./tomitaparser', 'config.proto']
-    subprocess.check_output(command)
+    us_input = request.form['txt']
+    with codecs.open('./input.txt', 'w', 'utf-8') as file_input:
+        file_input.write(str(us_input))
+    parsim = ['./tomitaparser', 'config.proto']
+    subprocess.check_output(parsim)
     return render_template('pretty.html')
 
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=5005)
+    app.run(debug=True)
